@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Booking</title>
+	<style type="text/css">
+	*{
+			padding: 0px;
+			margin:0px;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		body{
+			background: #3399ff;
+			background-size: cover;
+		}
+	h1{
+			top:5%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			position: absolute;
+			color: #fff;
+			
+		}
+		.signup h1{
+			font-size: 40px;
+			text-align: center;
+			text-transform: uppercase;
+			
+		}
+	.booking{
+			width:350px;
+			top:70%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			position: absolute;
+			color: #fff;
+			}
+	
+	.booking ul{
+		font-size: 25px;
+			margin: 30px;
+			font-weight: bold;
+		text-align: center;
+			
+	}
+	.booking ul li{
+	     display:inline-block;
+	}
+	
+	.booking ul li input{
+		font-size: 16px;
+		width: 100%;
+		height: auto;
+		padding: 17px 15px;
+		border: none;
+		border-radius: 5px;
+	}
+		.booking ul li select{
+			font-size: 20px;
+		width: 100%;
+		height: auto;
+		padding: 15px 15px;
+		border: none;
+		border-radius: 5px;
+			
+		}
+		.booking ul li textarea {	
+	    font-size: 20px;
+		width: 100%;
+		height: auto;
+		padding: 15px 15px;
+		border: none;
+		border-radius: 5px;
+			
+			
+		}
+	
+	.booking2{
+		   
+			margin:15px 2px;
+			width:50%;
+			border-radius: 5px;
+			border: 0px;
+	}
+    
+	.booking2 input{
+		 font-size: 10px;
+			font-weight: bold;
+		}
+	 .booking2:hover input{
+		background: #030303;
+	}
+	.booking3{
+			margin: 25px 0;
+			text-align: center;
+			font-size: 20px;
+			color: aliceblue;
+		}
+	
+  .booking3 a{
+			color: #003CFF;
+			text-decoration: none;
+			font-weight: bold;
+	}
+	  .booking3 a:hover{
+			text-decoration: underline;
+		}
+	
+	
+	
+	
+	
+	
+	
+	</style>
+	<script type="text/javascript">
+function formValidation()
+{
+var name = document.registration.name;
+var adults = document.registration.adults;
+
+var email = document.registration.email;
+var place = document.registration.username;
+var sdate= document.registration.sdate;
+var edate = document.registration.edate;
+var email = document.registration.email;
+var pnumber = document.registration.pnumber;
+
+
+
+function Emptyfield(name,adults,place,email,edate,sdate,pnumber)
+{ 
+var name_len = name.value.length;
+var adults_len = adults.value.length;
+var place_len = place.value.length;
+var sdate_len = sdate.value.length;
+var edate_len = edate.value.length;
+var email_len = email.value.length;
+var pnumber_len = pnumber.value.length;
+
+if (name_len == 0 || pnumber_len==0 || place_len == 0||adults_len== 0||email_len == 0 ||sdate_len==0 || edate_len==0)
+{
+alert("Fields should not be empty ");
+   
+return false;
+}
+else
+{
+return true;
+}
+}// end of Emptyfield
+
+
+
+</script>
+	
+</head>
+
+<body>
+	<h1>Booking</h1>
+	<div class="booking">
+	<form id="form1" name="registration" method="post" action="data.php" onSubmit="return formValidation();">
+   <ul>
+	<li><label for="name"> Name:</label></li>
+<li><input type="text" name="name"  /></li>
+
+<li><label for="max guests"> Adults:</label></li>
+<li><input type="number" name="adults"  /></li>
+<li><label for="max guests"> Children</label></li>
+<li><input type="number" name="childern"/></li>
+
+
+<li><label for="place">Visiting Place:</label></li>
+<li><select id="place" name="place" required>
+	<option value="Kandy">Kandy</option>
+	<option value="Polonnaruwa">Polonnaruwa</option>
+	<option value="Aduradapura">Anuradapura</option>
+	<option value="Sigiriya">Sigiriya</option>
+	<option value="Katharagama">Katharagama</option>
+	<option value="Yala">Yala</option>
+	<option value="Sinharajaya">Sinharajaya</option>
+	<option value="Nuwaraleliya">Nuwaraleliya</option>
+	<option value="Jaffna">Jaffna</option>
+	<option value="Trinconalee">Trinconalee</option>
+	</select></li>
+	  
+<li><label for="edate">Check-in Date: </label></li>
+<li><input type="date" name="sdate" id="sdate" /></li>
+	
+<li><label for="edate">Check-out Date: </label></li>
+<li><input type="date" name="edate" id="edate" /></li>
+
+	   
+	   
+	   
+<li><label for="phone number">Phone Number:</label></li>
+<li><input type="tel" name="pnumber" /></li>
+	   <li><label for="email">Email:</label></li>
+<li><input type="email" name="email"  /></li>
+<li><label for="massage">Massage:</label></li>
+<li><textarea name="massage" id="textarea"></textarea></li>
+<div class="booking2">
+<li><input type="submit" name="submit" value="Submit" /></li>
+</div>
+	   <div class="booking3">
+		Go To Profile.  <a href="sidebar.php">Profile</a>
+			</div>
+
+		</ul>
+	</form>
+	</div>	
+</body>
+</html>

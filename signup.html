@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+		*{
+			padding: 0px;
+			margin:0px;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		body{
+			background: #3399ff;
+			background-size: cover;
+		}
+	.signup{
+			top:15%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			position: absolute;
+			color: #fff;
+			
+		}
+		.signup h1{
+			font-size: 40px;
+			text-align: center;
+			text-transform: uppercase;
+			
+		}
+	.signup-form{
+			width:350px;
+			top:70%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			position: absolute;
+			color: #fff;
+			}
+	
+	.signup-form ul{
+		font-size: 25px;
+			margin: 15px;
+			font-weight: bold;
+		text-align: center;
+			
+	}
+	.signup-form ul li{
+	     display:inline-block;
+	}
+	
+	.signup-form ul li input{
+		font-size: 16px;
+		width: 100%;
+		height: auto;
+		padding: 15px 15px;
+		border: none;
+		border-radius: 5px;
+	}
+	
+	.button{
+		   
+			margin:15px 2px;
+			width:50%;
+			border-radius: 5px;
+			border: 0px;
+	}
+    
+	.button input{
+		 font-size: 10px;
+			font-weight: bold;
+		}
+	 .button:hover input{
+		background: #030303;
+	}
+	.login{
+			margin: 25px 0;
+			text-align: center;
+			font-size: 20px;
+			color: aliceblue;
+		}
+	
+  .login a{
+			color: #003CFF;
+			text-decoration: none;
+			font-weight: bold;
+	}
+	  .login a:hover{
+			text-decoration: underline;
+		}
+	
+	</style>
+	
+
+
+
+<script type="text/javascript">
+function formValidation()
+{
+var fname = document.registration.fname;
+var lname = document.registration.lname;
+var country = document.registration.country;
+var email = document.registration.email;
+var username = document.registration.username;
+var password = document.registration.password;
+var conpassword = document.registration.conpassword;
+
+if(Emptyfield(fname,lname,country,email,username,password,conpassword))
+{    
+	var p1=password.value;
+	var p2=conpassword.value;
+	
+	if(matchpass(p1,p2))
+	{
+	return true;
+	}
+}
+return false;
+	} //end of formValidation
+
+function Emptyfield(fname,lname,country,email,username,password,conpassword)
+{ 
+var fname_len = fname.value.length;
+var lname_len = lname.value.length;
+var country_len = country.value.length;
+var uemail_len = email.value.length;
+var username_len = username.value.length;
+var password_len = password.value.length;
+var conpassword_len = conpass.value.length;
+
+if (fname_len == 0 || lname_len==0 || password_len == 0||conpassword_len== 0||email_len == 0 ||username_len==0 || country_len==0)
+	
+{
+alert("Fields should not be empty ");
+   
+return false;
+}
+else
+{
+return true;
+}
+}// end of Emptyfield
+
+function matchpass(pass,conpassword{
+
+if(password==conpassword){
+return true;
+}
+else
+{
+  alert("password must be same");
+  
+    return false;
+}
+}
+</script>
+	
+ 
+</head>
+
+
+<body>
+
+<div class="signup">
+<h1>Signup Form</h1>
+	</div>
+	<div class="signup-form">
+<form id="form1" name="registration" method="post" action="Reginsert.php" onSubmit="return formValidation();">
+   <ul>
+<li><label for="fname"> First Name:</label></li>
+<li><input type="text" name="fname" placeholder="First Name" /></li>
+
+<li><label for="fname"> Last Name:</label></li>
+<li><input type="text" name="lname" placeholder="Last Name" /></li>
+
+<li><label for="fname">Country:</label></li>
+<li><input type="text" name="country" placeholder="Country"/></li>
+
+<li><label for="email">Email:</label></li>
+<li><input type="text" name="email" placeholder="Email" /></li>
+
+<li><label for="fname"> Username:</label></li>
+<li><input type="text" name="username"  placeholder="Username"/></li>
+
+<li><label for="Password">Password:</label></li>
+<li><input type="password" name="password" placeholder="Password"/></li>
+
+<li><label for="Confirm Password">Confirm Password:</label></li>
+<li><input type="password" name="conpassword" placeholder=" Confirm Password"/></li>
+<div class="button">
+<li><input type="submit" name="submit" value="Submit" /></li>
+</div>
+</ul>
+	<div class="login">
+		Go To Login.  <a href="loging.php">Login</a>
+			</div>
+
+</form>
+		</div>
+</body>
+</html>
